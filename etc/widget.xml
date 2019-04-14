@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<widgets xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Widget:etc/widget.xsd">
+    <widget id="wordpress_post" class="Karl\WordpressApi\Block\Widget\Block" placeholder_image="Magento_Cms::images/widget_block.png">
+        <label translate="true">WordPress Post</label>
+        <description translate="true">A single post from WordPress</description>
+        <parameters>
+            <parameter name="post_id" xsi:type="select" visible="true" sort_order="10" source_model="Karl\WordpressApi\Model\Source\Widget\Post">
+                <label translate="true">Block</label>
+            </parameter>
+        </parameters>
+    </widget>
+</widgets>

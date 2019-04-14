@@ -1,0 +1,11 @@
+<?php $pages = $block->getPages();?>
+<div class="pages">
+<?php foreach ($pages as $page):?>
+    <div class="post">
+        <h2><?= $page['title']['rendered'];?></h2>
+        <div class="content">
+            <?= $page['content']['rendered']; ?>
+        </div>
+    </div>
+<?php endforeach; ?>
+</div>

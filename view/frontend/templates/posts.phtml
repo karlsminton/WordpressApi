@@ -1,0 +1,11 @@
+<?php $posts = $block->getPosts();?>
+<div class="posts">
+<?php foreach ($posts as $post):?>
+    <div class="post">
+        <h2><?= $post['title']['rendered'];?></h2>
+        <div class="content">
+            <?= $post['content']['rendered']; ?>
+        </div>
+    </div>
+<?php endforeach; ?>
+</div>
