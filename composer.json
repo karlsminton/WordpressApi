@@ -1,0 +1,19 @@
+{
+    "name": "karl/wordpress-api",
+    "description": "A magento2 wordpress integration tool.",
+    "require": {
+        "php": "~7.0.13|~7.1.0",
+        "magento/framework": "101.0.*",
+        "guzzlehttp/guzzle": "~6.2.0"
+    },
+    "type": "magento2-module",
+    "version": "1.0.0",
+    "autoload": {
+        "files": [
+            "registration.php"
+        ],
+        "psr-4": {
+            "Karl\\WordpressApi\\": ""
+        }
+    }
+}
