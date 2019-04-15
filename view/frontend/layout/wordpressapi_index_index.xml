@@ -1,0 +1,8 @@
+<?xml version="1.0"?>
+<page>
+    <body>
+        <referenceContainer name="main.content">
+            <block class="Karl\WordpressApi\Block\Posts" name="post.list" template="list/posts.phtml" before="-"/>
+        </referenceContainer>
+    </body>
+</page>

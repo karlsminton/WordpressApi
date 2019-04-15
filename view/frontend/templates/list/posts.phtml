@@ -1,0 +1,10 @@
+<div class="post list">
+<?php foreach ($block->getPosts() as $post): ?>
+    <div class="post">
+        <h3><?php echo $post['title']['rendered'];?></h3>
+        <div class="postcontent">
+            <?php echo $post['excerpt']['rendered']; ?>
+        </div>
+    </div>
+<?php endforeach;?>
+</div>

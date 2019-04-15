@@ -14,10 +14,14 @@
           					<label>Enabled</label>
           					<source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
         				</field>
-        				<field id="wordpress_url" showInDefault="1" showInStore="1" showInWebsite="1" sortOrder="10" translate="label" type="text">
+        				<field id="wordpress_url" showInDefault="1" showInStore="1" showInWebsite="1" sortOrder="20" translate="label,comment" type="text">
           					<label>Wordpress URL</label>
           					<comment>The URL of the wordpress install, including index.php if that is in the base URL.</comment>
         				</field>
+                <field id="route_name" showInDefault="1" showInStore="1" showInWebsite="1" sortOrder="30" translate="label,comment" type="text">
+                    <label>Route Name</label>
+                    <comment>The name for your blog route, i.e. if your route is http://yoursite.com/blog it would be 'blog'</comment>
+                </field>
       			</group>
     		</section>
   	</system>
