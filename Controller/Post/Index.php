@@ -1,6 +1,6 @@
 <?php
 
-namespace Karl\WordpressApi\Controller\Index;
+namespace Karl\WordpressApi\Controller\Post;
 
 use Magento\Framework\App\Action;
 use Magento\Framework\View\Result\PageFactory;
@@ -21,8 +21,12 @@ class Index extends Action\Action
     public function execute()
     {
         $page = $this->pageFactory->create();
-        $title = $page->getLayout()->getBlock('page.main.title');
-        $title->setPageTitle('Blog Listing Page');
+        $title = $page->getLayout()->getBlock('single.post')->setParam(
+            [
+                'key' => 'slug',
+                'value' => $this->getRequest()->getParam('post_name')
+            ]
+        );
         return $page;
     }
 }

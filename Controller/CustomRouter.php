@@ -29,17 +29,21 @@ class CustomRouter implements RouterInterface
 
     public function match(\Magento\Framework\App\RequestInterface $request)
     {
-        $identifier = trim($request->getPathInfo(), '/');
+        $route = explode('/', $request->getOriginalPathInfo());
+        array_shift($route);
 
-        if (!$route = $this->getCustomRoute()) {
-            return false;
-        }
-
-        if($identifier == $route) {
-            $request->setModuleName('wordpressapi')-> //module name
-            setControllerName('index')-> //controller name
-            setActionName('index');//-> //action name
-            //setParam('param', 3); //custom parameters
+        if ($route[0] == $this->getCustomRoute()) {
+            //module name - controller name - action name - parameters
+            $request->setModuleName('wordpressapi');
+            $request->setActionName('index');
+            if (isset($route[1])) {
+                $request->setControllerName('post');
+                $request->setParam('post_name', $route['1']);
+            }
+            else {
+                $request->setControllerName('index');
+            }
+            $request->setActionName('index');
        }
        else {
            return false;
@@ -58,4 +62,5 @@ class CustomRouter implements RouterInterface
           ScopeInterface::SCOPE_STORE
       );
    }
+
 }
